@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O R B I T | 3D Weather App</title>
+
+    <meta name="description" content="Advanced 3D Atmospheric Monitoring System. Real-time global weather telemetry and visualization.">
+    <meta name="keywords" content="weather, 3D, three.js, cyberpunk, sci-fi, interface, atmospheric monitoring, orbit system">
+    <meta name="author" content="GreenBugX">
+
+    <meta name="theme-color" content="#050505">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="O R B I T | S Y S T E M  v9">
+    <meta property="og:description" content="Access real-time 3D weather telemetry.">
+    <meta property="og:image" content="assets/favicon.svg"> <meta property="og:url" content="https://https://orbit3dweather.netlify.app/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="O R B I T | 3D Weather App">
+    <meta name="twitter:description" content="Interactive 3D Atmospheric Monitoring System.">
+    <meta name="twitter:image" content="assets/favicon.svg">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
+    <link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <audio id="bg-music" loop>
+        <source src="assets/music2.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="scanlines"></div>
+    <div id="loader" class="loader">ESTABLISHING UPLINK...</div>
+
+    <div id="cursor-layer">
+        <canvas id="trail-canvas"></canvas>
+        <div id="custom-cursor"></div>
+    </div>
+
+    <canvas id="webgl"></canvas>
+
+    <div id="ui-layer">
+        <header>
+            <div class="brand interactive" id="brandLogo">
+                ORBIT SYSTEM v9
+                <span>Atmospheric Monitoring</span>
+            </div>
+            
+            <div class="controls-container">
+                <div class="search-box interactive">
+                    <input type="text" id="cityInput" value="Tokyo" placeholder="ENTER COORDS" class="interactive">
+                    <button class="btn-search interactive" onclick="triggerSearch()">SCAN</button>
+                </div>
+
+                <button id="musicBtn" class="btn-audio interactive">AUDIO: OFF</button>
+            </div>
+        </header>
+
+        <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+            <div class="weather-info interactive">
+                <div class="temp-huge" id="tempDisp">00°</div>
+                <div class="condition-glitch" id="condDisp">SYSTEM IDLE</div>
+                <div style="margin-top: 15px; font-size: 1rem; opacity: 0.7;" id="locDisp">--</div>
+            </div>
+
+            <div class="details-grid interactive">
+                <div class="detail-item">
+                    <div class="detail-label">Wind Speed</div>
+                    <div class="detail-val" id="windDisp">0 km/h</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Humidity</div>
+                    <div class="detail-val" id="humDisp">0%</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">AQI</div>
+                    <div class="detail-val" id="aqiDisp">--</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Pressure</div>
+                    <div class="detail-val" id="pressDisp">-- hPa</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

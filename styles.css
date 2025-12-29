@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500;700&family=Share+Tech+Mono&display=swap');
+
+:root {
+    --primary: #00f0ff;
+    --bg: #050505;
+    --glass: rgba(10, 20, 30, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    cursor: none !important;
+}
+
+body {
+    background-color: var(--bg);
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+#cursor-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+
+#custom-cursor {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--primary);
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: width 0.2s, height 0.2s, border-color 0.5s;
+    mix-blend-mode: difference;
+}
+
+
+#custom-cursor::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 2px;
+    background: var(--primary);
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px var(--primary);
+}
+
+
+#custom-cursor.active {
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 240, 255, 0.1);
+    animation: pulse-cursor 1s infinite;
+}
+
+@keyframes pulse-cursor {
+    0% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(1.1);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+}
+
+
+#webgl {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+
+#ui-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+
+.interactive {
+    pointer-events: auto;
+    cursor: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    pointer-events: auto;
+}
+
+.controls-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-audio {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 10px 20px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+    cursor: pointer;
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+    transition: 0.3s;
+}
+
+.btn-audio:hover {
+    background: var(--primary);
+    color: black;
+    border-color: var(--primary);
+}
+
+.brand {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.5rem;
+    border-left: 4px solid var(--primary);
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: border-color 1s;
+}
+
+.brand span {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    display: block;
+    margin-top: 5px;
+}
+
+.search-box {
+    position: relative;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+input {
+    background: transparent;
+    border: none;
+    color: white;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    width: 250px;
+    outline: none;
+}
+
+.btn-search {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    font-family: 'Rajdhani';
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-search:hover {
+    background: var(--primary);
+    color: black;
+}
+
+.weather-info {
+    pointer-events: auto;
+    max-width: 400px;
+}
+
+.temp-huge {
+    font-size: 8rem;
+    line-height: 0.8;
+    font-weight: 700;
+    text-shadow: 0 0 30px var(--primary);
+    font-family: 'Share Tech Mono';
+    transition: text-shadow 1s, color 1s;
+}
+
+.condition-glitch {
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-top: 10px;
+    color: var(--primary);
+    transition: color 1s;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    text-align: right;
+    pointer-events: auto;
+}
+
+.detail-item {
+    border-right: 2px solid rgba(255, 255, 255, 0.3);
+    padding-right: 15px;
+}
+
+.detail-label {
+    font-size: 1.4rem;
+    opacity: 0.6;
+    text-transform: uppercase;
+}
+
+.detail-val {
+    font-size: 1.8rem;
+    font-family: 'Share Tech Mono';
+    color: var(--primary)
+}
+
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1));
+    background-size: 100% 4px;
+    z-index: 50;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Share Tech Mono';
+    color: white;
+    font-size: 1.5rem;
+    z-index: 100;
+    background: black;
+    padding: 20px;
+    border: 1px solid white;
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    * {
+        cursor: auto !important;
+    }
+
+
+    #cursor-layer {
+        display: none;
+    }
+
+
+    #ui-layer {
+        padding: 20px;
+    }
+
+    #locDisp {
+        display: none;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .controls-container {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .btn-audio {
+        width: 45%; 
+        margin-left: 60%;
+    }
+
+    .brand {
+        border-left: none;
+        border-bottom: 2px solid var(--primary);
+        padding-left: 0;
+        padding-bottom: 5px;
+        text-align: center;
+    }
+
+
+    .search-box {
+        width: 100%;
+        justify-content: center;
+    }
+
+    input {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    #ui-layer>div:last-child {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .weather-info {
+        text-align: center;
+        max-width: 100%;
+        margin-right: 3%;
+    }
+
+    .temp-huge {
+        font-size: 2rem;
+    }
+
+    .condition-glitch {
+        font-size: 1.1rem;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .detail-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        padding-right: 0;
+        padding-bottom: 5px;
+    }
+}
