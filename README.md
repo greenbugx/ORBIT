@@ -1,7 +1,7 @@
 # ORBIT — 3D Weather App 🌐
 
 <p align="center">
-  [![Tech Stack](https://skillicons.dev/icons?i=js,html,css,threejs,webgl,gsap)](https://skillicons.dev)
+  <img src="https://skillicons.dev/icons?i=js,html,css,threejs,webgl,gsap">
 </p>
 
 **O R B I T | 3D Weather App** is a cyberpunk-inspired, interactive WebGL-based weather dashboard with real-time telemetry, atmospheric visualization, and an immersive UI.
