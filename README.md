@@ -12,7 +12,7 @@
 
 ## ✨ Demo & Preview
 
-Open [![O R B I T](https://orbit3dweather.netlify.app/)] in a browser (recommended: Chrome / Edge).
+Open [O R B I T](https://orbit3dweather.netlify.app/) in a browser (recommended: Chrome / Edge).
 
 ---
 
