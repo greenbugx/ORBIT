@@ -1,7 +1,7 @@
 # ORBIT — 3D Weather App 🌐
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=js,html,css,threejs,webgl,gsap">
+  <img src="https://skillicons.dev/icons?i=js,html,css,threejs">
   <img src="https://img.shields.io/badge/GSAP-93CF2B?style=for-the-badge&logo=greensock&logoColor=white">
 </p>
 
