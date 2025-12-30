@@ -2,7 +2,7 @@
 
 <p align="center">
     <img src="https://skillicons.dev/icons?i=js,html,css,threejs">
-    <a href="https://imgbb.com/"><img src="https://i.ibb.co/fdWs2j4g/gsap.png" alt="gsap"></a>
+    <a href="https://imgbb.com/"><img src="https://i.ibb.co/fdWs2j4g/gsap.png" alt="gsap" style="margin-top: 10px;"></a>
     <a href="https://imgbb.com/"><img src="https://i.ibb.co/fdtnVphJ/Webgl-Streamline-Simple-Icons-2.png" alt="Webgl" height="64" width="64"></a>
 </p>
 
