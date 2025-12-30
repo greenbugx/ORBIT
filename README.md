@@ -2,6 +2,7 @@
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=js,html,css,threejs,webgl,gsap">
+  <img src="https://img.shields.io/badge/GSAP-93CF2B?style=for-the-badge&logo=greensock&logoColor=white">
 </p>
 
 **O R B I T | 3D Weather App** is a cyberpunk-inspired, interactive WebGL-based weather dashboard with real-time telemetry, atmospheric visualization, and an immersive UI.
