@@ -33,7 +33,6 @@ Open [O R B I T](https://orbit3dweather.netlify.app/) in a browser (recommended:
 - 🎨 **CSS3** — `styles.css` (custom properties, responsive layout)
 - 🟨 **JavaScript (ES6+)** — `script.js`
 - 🌍 **three.js** — WebGL rendering, geometries, materials, particles
-- 🕹 **OrbitControls** — interactive camera orbiting
 - ⚡ **GSAP** — smooth animations & transitions
 - ☁️ **Open-Meteo API** — weather forecast and current conditions
 - 🗺️ **BigDataCloud (reverse geocoding)** — coordinates → nearest locality
