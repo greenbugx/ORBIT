@@ -66,7 +66,7 @@ Feel free to open issues or PRs to improve visuals, accessibility, performance, 
 
 ## 📝 License
 
-MIT License — see `LICENSE`.
+MIT License — see [LICENSE](https://github.com/greenbugx/ORBIT/blob/main/LICENSE).
 
 ---
 
